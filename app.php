@@ -1,5 +1,5 @@
 <?
-include_once '../engine/functions.php';
+include_once '../engine/router.php';
 
 $router = new Router();
 $page_name = $router->getUrl();
