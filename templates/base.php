@@ -8,7 +8,7 @@
     <title>Php Lvl 2</title>
 </head>
 <body>
-
+<?php include_once $content['content']?>
 </body>
 </html>
 

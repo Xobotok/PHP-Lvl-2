@@ -1,17 +1,27 @@
 <?php
 class Router {
-    function prepareVariables($page = 'index') {
+    static function prepareVariables($page = 'index') {
         $vars = [];
         switch ($page) {
             case 'index':
                 $vars['content'] = '../templates/index.php';
+                break;
+            case 'gallery':
+                $url_array = explode("/", $_SERVER['REQUEST_URI']);
+                if ($url_array[2]){
+                    $vars['content'] = '../templates/gallery_item.tmpl';
+                    $vars['image'] = $url_array[2];
+                } else {
+                    $vars['content'] = '../templates/gallery.tmpl';
+                }
+
                 break;
             default:
                 $vars['content'] = '../templates/index.php';
         }
         return $vars;
     }
-    function getUrl() {
+    static function getUrl() {
         $url_array = explode('/',$_SERVER['REQUEST_URI']);
         if($url_array[1] == "") {
             $page_name = "index";

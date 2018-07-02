@@ -1,0 +1,7 @@
+<section class = 'gallery'>
+    <div class = gallery__block>
+        {%for images in images%}
+        <img src={{images.gallery_image}} alt={{images.gallery_title}}>
+        {% endfor %}
+    </div>
+</section>

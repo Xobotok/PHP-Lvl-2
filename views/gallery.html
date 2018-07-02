@@ -1,0 +1,7 @@
+<section class = 'gallery'>
+    <div class = gallery__block>
+        {%for images in images%}
+        <a href='/gallery/{{images.gallery_id}}' target =_self><img src={{images.gallery_image_mini}} alt={{images.gallery_title}}></a>
+        {% endfor %}
+    </div>
+</section>

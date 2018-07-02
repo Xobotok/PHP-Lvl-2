@@ -1,1 +1,1 @@
-<?include_once './base.php';
+<?include_once '../templates/base.php';
