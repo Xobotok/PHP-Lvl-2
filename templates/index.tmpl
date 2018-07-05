@@ -4,10 +4,10 @@ $db = new Database();
 try {
     $loader = new Twig_Loader_Filesystem('../views');
     $twig = new Twig_Environment($loader);
-    $template = $twig->loadTemplate('gallery.html');
-    $images = $db->getGalleryElements();
+    $template = $twig->loadTemplate('goods.html');
+    $products = $db->getProducts(24);
     echo $template->render(array(
-        'images' => $images
+        'products' => $products
     ));
 } catch (Exception $e) {
     die ('ERROR: ' . $e->getMessage());

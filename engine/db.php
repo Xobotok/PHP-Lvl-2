@@ -34,6 +34,15 @@ class Database {
         $result = $this->getAssocResult("SELECT * FROM gallery");
         return $result;
     }
+    function getProducts($num = 1) {
+        $result = $this->getAssocResult("SELECT * FROM product LIMIT $num");
+        return $result;
+    }
+    function getProductsFromTo($from = 1, $to = 3) {
+        $sql = "SELECT * FROM product  ORDER BY id ASC LIMIT {$from}, {$to}";
+        $result = $this->getAssocResult($sql);
+        return $result;
+    }
 }
 
 $db = new Database();
