@@ -4,7 +4,7 @@ class Router {
         $vars = [];
         switch ($page) {
             case 'index':
-                $vars['content'] = '../templates/index.php';
+                $vars['content'] = '../templates/index.tmpl';
                 break;
             case 'gallery':
                 $url_array = explode("/", $_SERVER['REQUEST_URI']);
@@ -17,7 +17,7 @@ class Router {
 
                 break;
             default:
-                $vars['content'] = '../templates/index.php';
+                $vars['content'] = '../templates/index.tmpl';
         }
         return $vars;
     }

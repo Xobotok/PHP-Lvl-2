@@ -1,0 +1,18 @@
+<section class='good'>
+    <h3 class="good__block_title">Latest Products</h3>
+    <div class="good__block row" id = "content">
+        {%for products in products%}
+        <div class="good__item col-lg-4 col-md-6 col-sm-12 col-xs-12">
+            <div class="good__item_block">
+                <img src={{products.image}} alt="">
+                <h5 class="good__item_title">{{products.title}}</h5>
+                <p class="good__item_title">{{products.description}}</p>
+                <h5 class="good__item_price"><b>{{products.price}}</b></h5>
+            </div>
+        </div>
+        {%endfor%}
+    </div>
+    <button class="good__block_show" id = "show_more" onclick="show()">Show More</button>
+</section>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="../ajax.js"></script>
